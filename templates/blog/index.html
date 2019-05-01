@@ -6,6 +6,9 @@
 </head>
 <body>
 <h1>Nomaan Abbasey's Adventures</h1>
+<form action="{% url 'blog:post' %}">
+    <input type="submit" value="Post New Article">
+</form>
 {% if latest_post_list %}
     <ul>
     {% for val in latest_post_list %}

@@ -15,10 +15,10 @@ def index(request):
 
 def detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
-    author = Author.objects.filter(id=post.author_id)
-    return render(request, 'blog/detail.html', {'post': post, 'author': author})
+    return render(request, 'blog/detail.html', {'post': post})
 
 
-def post(request, post_id):
-    return HttpResponse("Added Post %s." % post_id)
+def post(request):
+    authors = Author.objects.all()[::len(Author.objects.all())]
+    return render(request, 'blog/post.html', {'authors': authors})
 

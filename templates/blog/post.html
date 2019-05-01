@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nomaan Abbasey's Blog</title>
+</head>
+<body>
+    <h1>Publish a Blog Post</h1>
+    <form action="{% url 'blog:publish' %}" method="post">
+        <span> Author:
+        <select name="author">
+            {% for val in authors %}
+                <option value={{val}}>{{ val }}</option>
+            {% endfor %}
+        </select>
+        </span>
+     <br/>
+     <span>
+         Post Date:
+         <input type="date" name="pub_date">
+     </span>
+     <br/>
+     <span>
+         Title
+         <input name="title" type="text">
+     </span>
+     <br/>
+     <span>
+         Description
+         <textarea name="description" rows="16" cols="100"></textarea>
+     </span>
+    </form>
+    <br/>
+    <input type="submit" value="Publish">
+    </form>
+</body>
+</html>

@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
-from .models import Post,Author
+from .models import Post, Author
 from .forms import PostForm
 # Create your views here.
 
@@ -21,15 +21,24 @@ def detail(request, post_id):
 
 
 def post(request):
+    form = PostForm()
     authors = Author.objects.all()[::len(Author.objects.all())]
-    return render(request, 'blog/post.html', {'authors': authors})
+    return render(request, 'blog/post.html', {'authors': authors, 'form': form})
 
 
 def publish(request):
     if request.method == 'POST':
         post = PostForm(request.POST)
         if post.is_valid():
-            new_post = post.save()
+           author = int(post.cleaned_data['author']) + 1
+           title = post.cleaned_data['title']
+           date = post.cleaned_data['pub_date']
+           description = post.cleaned_data['description']
+           p = Post()
+           p.author = Author.objects.get(id=author)
+           p.title = title
+           p.pub_date = date
+           p.description = description
+           p.save()
 
-        print(post)
     return HttpResponseRedirect(reverse('blog:index'))

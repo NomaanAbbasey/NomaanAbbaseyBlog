@@ -8,29 +8,7 @@
     <h1>Publish a Blog Post</h1>
     <form action="{% url 'blog:publish' %}" method="post">
     {% csrf_token %}
-        <span> Author:
-        <select name="author">
-            {% for val in authors %}
-                <option value={{ form.author }}>{{ val }}</option>
-            {% endfor %}
-        </select>
-        </span>
-     <br/>
-     <span>
-         Post Date:
-         <input type=date name="pub_date" value={{ form.pub_date }}>
-     </span>
-     <br/>
-     <span>
-         Title
-         <input name="title" type="text" value={{ form.title }}>
-     </span>
-     <br/>
-     <span>
-         Description
-         <textarea name="description" rows="16" cols="100">{{ form.description }}</textarea>
-     </span>
-    <br/>
+     {{ form.as_p }}
     <input type="submit" value="Publish">
     </form>
 </body>

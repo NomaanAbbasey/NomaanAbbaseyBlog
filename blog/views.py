@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
+from django.urls import reverse
 from .models import Post,Author
 # Create your views here.
 
@@ -22,3 +23,8 @@ def post(request):
     authors = Author.objects.all()[::len(Author.objects.all())]
     return render(request, 'blog/post.html', {'authors': authors})
 
+
+def publish(request):
+    if request.method == 'POST':
+        print(request.POST)
+    return HttpResponseRedirect(reverse('blog:index'))

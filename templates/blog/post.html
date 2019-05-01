@@ -7,17 +7,18 @@
 <body>
     <h1>Publish a Blog Post</h1>
     <form action="{% url 'blog:publish' %}" method="post">
+    {% csrf_token %}
         <span> Author:
         <select name="author">
             {% for val in authors %}
-                <option value={{val}}>{{ val }}</option>
+                <option value={{value }}>{{ val }}</option>
             {% endfor %}
         </select>
         </span>
      <br/>
      <span>
          Post Date:
-         <input type="date" name="pub_date">
+         <input type=date name="pub_date">
      </span>
      <br/>
      <span>
@@ -29,7 +30,6 @@
          Description
          <textarea name="description" rows="16" cols="100"></textarea>
      </span>
-    </form>
     <br/>
     <input type="submit" value="Publish">
     </form>

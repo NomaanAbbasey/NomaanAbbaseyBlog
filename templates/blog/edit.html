@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nomaan Abbasey's Blog</title>
+</head>
+<body>
+<h1>Nomaan Abbasey's Adventures</h1>
+<h3>Edit Post: </h3>
+    <form action="{% url 'blog:completeEdit' post.id%}" method="post">
+    {% csrf_token %}
+<textarea name="description" rows="16" cols="100">{{ post.description }}</textarea>
+        <input type="submit" value="Edit">
+    </form>
+</body>
+</html>

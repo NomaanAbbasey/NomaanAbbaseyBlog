@@ -11,5 +11,9 @@
     {{ post.description }}
 </p>
 <p>{{ post.pub_date }}</p>
+<form action="{% url 'blog:edit' post.id%}">
+    {% csrf_token %}
+    <input type="submit" value="Edit Post">
+</form>
 </body>
 </html>

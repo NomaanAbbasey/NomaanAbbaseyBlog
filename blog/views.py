@@ -42,3 +42,15 @@ def publish(request):
            p.save()
 
     return HttpResponseRedirect(reverse('blog:index'))
+
+
+def edit(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    return render(request, 'blog/edit.html', {'post': post})
+
+
+def completeEdit(request, post_id):
+    edit_Post = get_object_or_404(Post, pk=post_id)
+    edit_Post.description = request.POST.get("description")
+    edit_Post.save();
+    return HttpResponseRedirect(reverse('blog:detail', args=(post_id,)))

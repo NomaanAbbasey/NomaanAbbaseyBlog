@@ -1,3 +1,4 @@
+{% load static from staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,17 +7,25 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
-<body>
-<h1>Nomaan Abbasey's Adventures</h1>
-<h3>Edit Post: </h3>
-    <form action="{% url 'blog:completeEdit' post.id%}" method="post">
+<body style="background-image: url({% static 'gundam.jpg' %})">
+<div class="jumbotron" style="background-color: #2742E8">
+    <h1 style="text-align: center; color: #2BEFFF">Nomaan Abbasey's Adventures</h1>
+</div>
+<div class="nav" style="text-align: center; align-items: center;">
+    <ul style="list-style: none; width: 85%; margin: auto">
+         <li class="d-flex flex-column" style ="border: 2px solid black; border-radius: 25px; margin-top: 20px; background-color: #2BEFFF ">
+    <h3 class="p-2" style="color: #2D13EB">Edit Post: </h3>
+             <form class="p-2" action="{% url 'blog:completeEdit' post.id%}" method="post">
     {% csrf_token %}
-<textarea name="description" rows="16" cols="100">{{ post.description }}</textarea>
-        <input type="submit" value="Edit">
+<textarea  name="description" rows="16" cols="100">{{ post.description }}</textarea>
+        <input class="btn btn-primary" type="submit" value="Edit">
     </form>
-<form action="{% url 'blog:detail' post.id%}">
+<form class="p-2" action="{% url 'blog:detail' post.id%}">
     {% csrf_token %}
-    <input type="submit" value="Return to Post">
+    <input class="btn btn-primary" type="submit" value="Return to Post">
 </form>
+         </li>
+    </ul>
+</div>
 </body>
 </html>

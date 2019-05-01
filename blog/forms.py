@@ -5,6 +5,15 @@ import datetime
 
 from django import forms
 
+"""
+Name: forms.py
+Author: Nomaan Abbasey
+Date: May 1, 2019
+"""
+
+
+# gets query set of authors and passes it to list so that it may be unloaded for use
+
 
 def authorchoices():
     author_list = Author.objects.values_list('name', flat=True)
@@ -13,6 +22,8 @@ def authorchoices():
         author_value.append(i)
     authors = list(zip(author_value, author_list))
     return authors
+
+# Post Form represents the form used to create a new post and save it to the db
 
 
 class PostForm(forms.Form):

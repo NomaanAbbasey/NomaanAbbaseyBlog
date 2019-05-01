@@ -1,6 +1,13 @@
 from django.db import models
 import datetime
 
+"""
+Name: modelss.py
+Author: Nomaan Abbasey
+Date: May 1, 2019
+"""
+
+
 # Create your models here.
 
 # Author model represents the author data

@@ -1,21 +1,36 @@
+{% load static from staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        th {
+            border-spacing: 0 1em;
+        }
+    </style>
     <meta charset="UTF-8">
     <title>Nomaan Abbasey's Blog</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
-<body>
-    <h1>Publish a Blog Post</h1>
+<body style="background-image: url({% static 'gundam.jpg' %})">
+    <div class="jumbotron" style="background-color: #2742E8">
+    <h1 style="text-align: center; color: #2BEFFF">Nomaan Abbasey's Adventures</h1>
+</div>
+    <div class="nav" style="text-align: center; align-items: center;">
+             <ul style="list-style: none; width: 80%; margin: auto">
+          <li class="d-flex flex-column" style ="border: 2px solid black; border-radius: 25px; margin-top: 20px; background-color: #2BEFFF ">
     <form action="{% url 'blog:publish' %}" method="post">
     {% csrf_token %}
      {{ form.as_p }}
-    <input type="submit" value="Publish">
+    <input class="btn btn-primary" style="margin-top: 10px" type="submit" value="Publish">
     </form>
 <form action="{% url 'blog:index' %}">
     {% csrf_token %}
-    <input type="submit" value="Return to Blog">
+    <input style="margin-top: 10px" class="btn btn-primary" type="submit" value="Return to Blog">
 </form>
+
+          </li>
+             </ul>
+    </div>
 </body>
 </html>

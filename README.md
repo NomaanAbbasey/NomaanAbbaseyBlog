@@ -19,6 +19,9 @@ the blog form was valid and what not. I also was not able to implement a date pi
 for the creation form. As of now I lack knowledge as to how to properly style the the form which utilizes 
 th and tr elements without a table to encapsulate them and the fact they render from a form object. 
 
+To continue, I saw I could have used generic templates and .css stylesheets for my views however nearing
+the end of the deadline I did have the time to implement these. In the future I plan to use them.
+
 Overall, I am happy to add more experience to my limited python and django experience and build up on it.
 This was a great opportunity.   
 

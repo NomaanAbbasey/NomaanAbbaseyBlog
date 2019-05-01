@@ -16,7 +16,7 @@ Date: May 1, 2019
 
 
 def index(request):
-    latest_post_list = Post.objects.order_by('pub_date')[:5]
+    latest_post_list = Post.objects.order_by('-pub_date')[:5]
     context = {
         'latest_post_list': latest_post_list,
     }

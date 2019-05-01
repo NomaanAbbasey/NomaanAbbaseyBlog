@@ -11,24 +11,24 @@
         <span> Author:
         <select name="author">
             {% for val in authors %}
-                <option value={{value }}>{{ val }}</option>
+                <option value={{ form.author }}>{{ val }}</option>
             {% endfor %}
         </select>
         </span>
      <br/>
      <span>
          Post Date:
-         <input type=date name="pub_date">
+         <input type=date name="pub_date" value={{ form.pub_date }}>
      </span>
      <br/>
      <span>
          Title
-         <input name="title" type="text">
+         <input name="title" type="text" value={{ form.title }}>
      </span>
      <br/>
      <span>
          Description
-         <textarea name="description" rows="16" cols="100"></textarea>
+         <textarea name="description" rows="16" cols="100">{{ form.description }}</textarea>
      </span>
     <br/>
     <input type="submit" value="Publish">

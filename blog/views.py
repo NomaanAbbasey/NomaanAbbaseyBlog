@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from .models import Post,Author
+from .forms import PostForm
 # Create your views here.
 
 
@@ -26,5 +27,9 @@ def post(request):
 
 def publish(request):
     if request.method == 'POST':
-        print(request.POST)
+        post = PostForm(request.POST)
+        if post.is_valid():
+            new_post = post.save()
+
+        print(post)
     return HttpResponseRedirect(reverse('blog:index'))

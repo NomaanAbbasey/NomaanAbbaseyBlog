@@ -13,8 +13,8 @@ class Author(models.Model):
     def __str__(self):
         return self.name
 
-
 # Post Model represents the information about the post
+
 
 class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)

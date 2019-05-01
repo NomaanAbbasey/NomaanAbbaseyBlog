@@ -5,14 +5,12 @@
     <title>Nomaan Abbasey's Blog</title>
 </head>
 <body>
-<h1>Welcome To My Blog</h1>
-{% if blogLandingDict %}
+<h1>Nomaan Abbasey's Adventures</h1>
+{% if latest_post_list %}
     <ul>
-    {% for key,val in blogLandingDict.items %}
+    {% for val in latest_post_list %}
         <li><a href="{% url 'blog:detail' val.id %}">{{ val.title }}</a>
-            {%for author in key%}
-        <span style="padding-left: 50ch">{{ author }}</span>
-            {%endfor%}
+        <span style="padding-left: 50ch">{{ val.author }}</span>
         <p style="width: 100ch; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">
             {{  val.description }}
         </p>

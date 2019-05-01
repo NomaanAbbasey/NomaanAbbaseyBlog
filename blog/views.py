@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.template import loader
 from .models import Post,Author
@@ -7,21 +7,16 @@ from .models import Post,Author
 
 def index(request):
     latest_post_list = Post.objects.order_by('-pub_date')[:5]
-    authors = Author.objects.all()
-    latest_post_authors = []
-    for item in latest_post_list:
-        latest_post_authors.append(authors.filter(id=item.author_id).all())
-
-    blogLandingDict = dict(zip(latest_post_authors, latest_post_list))
-    print(blogLandingDict)
     context = {
-        'blogLandingDict': blogLandingDict,
+        'latest_post_list': latest_post_list,
     }
     return render(request, 'blog/index.html', context)
 
 
 def detail(request, post_id):
-    return HttpResponse("Welcome to Post %s." % post_id)
+    post = get_object_or_404(Post, pk=post_id)
+    author = Author.objects.filter(id=post.author_id)
+    return render(request, 'blog/detail.html', {'post': post, 'author': author})
 
 
 def post(request, post_id):

@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4776a5c2-6fa8-420d-857f-23b3d89ddafb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NomaanAbbaseyBlog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NomaanAbbaseyBlog/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-    </list>
+    <list default="true" id="4776a5c2-6fa8-420d-857f-23b3d89ddafb" name="Default Changelist" comment="" />
     <ignored mask="*.pyc" />
     <ignored mask="*.sqlite3" />
     <ignored path="db.sqlite3" />
@@ -62,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blog/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+            <state relative-caret-position="340">
+              <caret line="20" column="44" lean-forward="true" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -161,16 +155,6 @@
             </path>
             <path>
               <item name="NomaanAbbaseyBlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NomaanAbbaseyBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NomaanAbbaseyBlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NomaanAbbaseyBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="NomaanAbbaseyBlog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NomaanAbbaseyBlog" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -237,7 +221,7 @@
       <workItem from="1556561703531" duration="1318000" />
       <workItem from="1556567139234" duration="4803000" />
       <workItem from="1556636738187" duration="34000" />
-      <workItem from="1556667645102" duration="2938000" />
+      <workItem from="1556667645102" duration="3321000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1556568105498</created>
@@ -250,13 +234,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9093000" />
+    <option name="totallyTimeSpent" value="9476000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2603939" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2603939" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -268,9 +251,9 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.33150986" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="9" weight="0.32932165" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32932165" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32932165" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32932165" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -389,8 +372,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blog/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+        <state relative-caret-position="340">
+          <caret line="20" column="44" lean-forward="true" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

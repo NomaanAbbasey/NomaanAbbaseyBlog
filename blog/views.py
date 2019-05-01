@@ -10,9 +10,10 @@ def index(request):
     authors = Author.objects.all()
     latest_post_authors = []
     for item in latest_post_list:
-        latest_post_authors.append(authors.filter(id=item.author_id))
+        latest_post_authors.append(authors.filter(id=item.author_id).all())
 
     blogLandingDict = dict(zip(latest_post_authors, latest_post_list))
+    print(blogLandingDict)
     context = {
         'blogLandingDict': blogLandingDict,
     }

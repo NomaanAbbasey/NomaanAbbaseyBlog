@@ -6,10 +6,13 @@
 </head>
 <body>
 <h1>Welcome To My Blog</h1>
-{% if blogLandingList %}
+{% if blogLandingDict %}
     <ul>
     {% for key,val in blogLandingDict.items %}
         <li><a href="{% url 'blog:detail' val.id %}">{{ val.title }}</a>
+            {%for author in key%}
+        <span style="padding-left: 50ch">{{ author }}</span>
+            {%endfor%}
         <p width="50ch">
             {{  val.description }}
         </p>

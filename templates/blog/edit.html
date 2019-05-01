@@ -12,5 +12,9 @@
 <textarea name="description" rows="16" cols="100">{{ post.description }}</textarea>
         <input type="submit" value="Edit">
     </form>
+<form action="{% url 'blog:detail' post.id%}">
+    {% csrf_token %}
+    <input type="submit" value="Return to Post">
+</form>
 </body>
 </html>

@@ -7,7 +7,7 @@ from django import forms
 
 
 def authorchoices():
-    author_list = Author.objects.all()[::len(Author.objects.all())]
+    author_list = Author.objects.values_list('name', flat=True)
     author_value = []
     for i in range(0, len(author_list)):
         author_value.append(i)

@@ -22,8 +22,7 @@ def detail(request, post_id):
 
 def post(request):
     form = PostForm()
-    authors = Author.objects.all()[::len(Author.objects.all())]
-    return render(request, 'blog/post.html', {'authors': authors, 'form': form})
+    return render(request, 'blog/post.html', {'form': form})
 
 
 def publish(request):

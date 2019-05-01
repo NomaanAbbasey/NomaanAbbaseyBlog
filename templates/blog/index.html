@@ -6,25 +6,32 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <body>
-<h1>Nomaan Abbasey's Adventures</h1>
+<div class="jumbotron">
+    <h1 style="text-align: center">Nomaan Abbasey's Adventures</h1>
+</div>
 <form action="{% url 'blog:post' %}">
     {% csrf_token %}
     <input type="submit" value="Post New Article">
 </form>
+<div class="nav" style="text-align: center; align-items: center;">
 {% if latest_post_list %}
-    <ul>
+    <ul style="list-style: none; width: 70%; margin: auto">
     {% for val in latest_post_list %}
-        <li><a href="{% url 'blog:detail' val.id %}">{{ val.title }}</a>
-        <span style="padding-left: 50ch">{{ val.author }}</span>
-        <p style="width: 100ch; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">
+        <li class="d-flex flex-column" style ="border: 2px solid black; border-radius: 25px; margin-top: 20px">
+            <a class="p-2" style="text-align: left" href="{% url 'blog:detail' val.id %}">{{ val.title }}</a>
+            <span class="p-2" style="padding-left: 50ch;text-align: left">{{ val.author }}</span>
+        <p class="p-2" style="text-align: left; width: 100ch; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">
             {{  val.description }}
         </p>
-        <p>{{ val.pub_date }}</p>
+        <p class="p-2" style="text-align: left"}>{{ val.pub_date }}</p>
         </li>
     {% endfor %}
     </ul>
+    </div>
 {% else %}
+    <div class="nav">
     <p>No posts are available.</p>
+    </div>
 {% endif %}
 </body>
 </html>

@@ -1,5 +1,5 @@
 from django.urls import path
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import views
 
 app_name = 'blog'
@@ -11,3 +11,5 @@ urlpatterns = [
     path('<int:post_id>/edit', views.edit, name='edit'),
     path('<int:post_id>/completeEdit', views.completeEdit, name='completeEdit')
 ]
+
+urlpatterns += staticfiles_urlpatterns()

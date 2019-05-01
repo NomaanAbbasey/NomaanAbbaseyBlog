@@ -1,3 +1,4 @@
+{% load static from staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,20 +7,30 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
-<body>
-<h1>Nomaan Abbasey's Adventures</h1>
-<h3>Author: {{ post.author }}<span style="padding-left: 15ch">{{ val.pub_date }}</span></h3>
-<p style="width: 100ch; overflow: hidden; word-wrap: break-word">
+<body style="background-image: url({% static 'gundam.jpg' %})">
+<div class="jumbotron" style="background-color: #2742E8">
+    <h1 style="text-align: center; color: #2BEFFF">Nomaan Abbasey's Adventures</h1>
+</div>
+<div class="nav" style="text-align: center; align-items: center;">
+     <ul style="list-style: none; width: 80%; margin: auto">
+          <li class="d-flex flex-column" style ="border: 2px solid black; border-radius: 25px; margin-top: 20px; background-color: #2BEFFF ">
+<h3 class="p-2" style="text-align: left; color: #2D13EB;">Author: {{ post.author }}</h3>
+<p class="p-2" style="width: 100ch; color: #2742E8; overflow: hidden; word-wrap: break-word; text-align: left">
     {{ post.description }}
 </p>
-<p>{{ post.pub_date }}</p>
-<form action="{% url 'blog:edit' post.id%}">
+<p class="p-2" style="text-align: left; color: #2742E8">{{ post.pub_date }}</p>
+              <div class="d-flex flex-row">
+<form class="p-2" action="{% url 'blog:edit' post.id%}">
     {% csrf_token %}
-    <input type="submit" value="Edit Post">
+    <input class="btn btn-primary" type="submit" value="Edit Post">
 </form>
-<form action="{% url 'blog:index' %}">
+<form class="p-2" action="{% url 'blog:index' %}">
     {% csrf_token %}
-    <input type="submit" value="Return to Blog">
+    <input class="btn btn-primary" type="submit" value="Return to Blog">
 </form>
+              </div>
+          </li>
+     </ul>
+</div>
 </body>
 </html>

@@ -4,6 +4,7 @@ from django.template import loader
 from django.urls import reverse
 from .models import Post, Author
 from .forms import PostForm
+from .utils import authorchoices
 # Create your views here.
 
 """
@@ -33,8 +34,9 @@ def detail(request, post_id):
 
 
 def post(request):
-    form = PostForm()
-    return render(request, 'blog/post.html', {'form': form})
+    author_list = authorchoices()
+    print(author_list)
+    return render(request, 'blog/post.html', {'authors': author_list})
 
 
 # publish view is used to take the POST request from post and create a new post. Then redirects to landing page.

@@ -9,10 +9,7 @@
 <body style="background-image: url({% static 'gundam.jpg' %})">
 <div class="jumbotron" style="background-color: #2742E8">
     <h1 style="text-align: center; color: #2BEFFF">Nomaan Abbasey's Adventures</h1>
-    <form style="text-align: center" action="{% url 'blog:post' %}">
-    {% csrf_token %}
-    <input class="btn btn-primary" type="submit" value="Post New Article">
-</form>
+    <a href="{% url 'blog:post' %}" class="btn btn-primary mr-3">Publish a Post</a>
 </div>
 <div class="nav" style="text-align: center; align-items: center;">
 {% if latest_post_list %}

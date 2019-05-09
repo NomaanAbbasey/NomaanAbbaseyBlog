@@ -18,9 +18,9 @@
              <form class="p-2" action="{% url 'blog:completeEdit' post.id%}" method="post">
     {% csrf_token %}
 <textarea  name="description" rows="16" cols="100">{{ post.description }}</textarea>
-        <input class="btn btn-primary" type="submit" value="Edit">
+        <input class="btn btn-success mr-3" type="submit" value="Edit">
     </form>
-             <button class="btn btn default btn-outline-primary mr-3" type="submit" value="Return to Post"><a href="{% url 'blog:detail' post.id%}">Return to Blog</a></button>
+             <a href="{% url 'blog:detail' post.id%}" class="btn btn default btn-outline-primary mr-3">Return to Blog</a>
          </li>
     </ul>
 </div>

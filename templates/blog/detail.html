@@ -20,8 +20,8 @@
 </p>
 <p class="p-2" style="text-align: left; color: #2742E8">{{ post.pub_date }}</p>
               <div class="d-flex flex-row">
-                  <button class="btn btn-primary" value="Edit Post"><a href="{% url 'blog:edit' post.id%}">Edit Post</a></button>
-<button class="btn btn-primary" value="Return"><a href="{% url 'blog:index' %}">Return to Blog</a></button>
+                 <a href="{% url 'blog:edit' post.id%}" class="btn btn default btn-outline-primary mr-3">Edit Post</a>
+<a href="{% url 'blog:index' %}" class="btn btn default btn-outline-primary mr-3">Return to Blog</a>
               </div>
           </li>
      </ul>

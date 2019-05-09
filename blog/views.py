@@ -3,7 +3,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from .models import Post, Author
-from .forms import PostForm
 from .utils import authorchoices
 # Create your views here.
 
@@ -44,20 +43,9 @@ def post(request):
 
 def publish(request):
     if request.method == 'POST':
-        post = PostForm(request.POST)
-        if post.is_valid():
-           author = int(post.cleaned_data['author']) + 1
-           title = post.cleaned_data['title']
-           date = post.cleaned_data['pub_date']
-           description = post.cleaned_data['description']
-           p = Post()
-           p.author = Author.objects.get(id=author)
-           p.title = title
-           p.pub_date = date
-           p.description = description
-           p.save()
 
-    return HttpResponseRedirect(reverse('blog:index'))
+
+        return HttpResponseRedirect(reverse('blog:index'))
 
 
 # edit view renders the edit.html where the selected blog post can be edited

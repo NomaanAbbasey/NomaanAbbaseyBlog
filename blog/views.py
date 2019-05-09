@@ -4,6 +4,7 @@ from django.template import loader
 from django.urls import reverse
 from .models import Post, Author
 from .utils import authorchoices
+import datetime
 # Create your views here.
 
 """
@@ -34,7 +35,7 @@ def detail(request, post_id):
 
 def post(request):
     author_list = authorchoices()
-    print(author_list)
+    currentDate = datetime.datetime.now()
     return render(request, 'blog/post.html', {'authors': author_list})
 
 

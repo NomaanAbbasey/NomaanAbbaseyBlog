@@ -20,10 +20,6 @@
     <form action="{% url 'blog:publish' %}" method="post">
     {% csrf_token %}
     <div class="form-group">
-        <label for="exampleFormControlInput1">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-    <div class="form-group">
         <label for="authorSelectLabel">Author</label>
         <select class="form-control" id="authorSelect">
        {% for val, name in authors %}
@@ -31,9 +27,13 @@
        {% endfor %}
         </select>
     </div>
+        <div class="form-group">
+        <label for="dateLabel">Date</label>
+        <input type="datetime-local" class="form-control" id="dateInput">
+    </div>
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">Body</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label for="bodyLabel">Body</label>
+        <textarea class="form-control" id="bodyTextArea" rows="3"></textarea>
     </div>
     <input class="btn btn-success mr-3" type="submit" value="Publish">
     <a href="{% url 'blog:index' %}" class="btn btn default btn-outline-primary mr-3" >Return to Blog</a>

@@ -20,14 +20,8 @@
 </p>
 <p class="p-2" style="text-align: left; color: #2742E8">{{ post.pub_date }}</p>
               <div class="d-flex flex-row">
-<form class="p-2" action="{% url 'blog:edit' post.id%}">
-    {% csrf_token %}
-    <input class="btn btn-primary" type="submit" value="Edit Post">
-</form>
-<form class="p-2" action="{% url 'blog:index' %}">
-    {% csrf_token %}
-    <input class="btn btn-primary" type="submit" value="Return to Blog">
-</form>
+                  <button class="btn btn-primary" value="Edit Post"><a href="{% url 'blog:edit' post.id%}">Edit Post</a></button>
+<button class="btn btn-primary" value="Return"><a href="{% url 'blog:index' %}">Return to Blog</a></button>
               </div>
           </li>
      </ul>

@@ -35,7 +35,6 @@ def detail(request, post_id):
 
 def post(request):
     author_list = authorchoices()
-    currentDate = datetime.datetime.now()
     return render(request, 'blog/post.html', {'authors': author_list})
 
 
@@ -44,9 +43,16 @@ def post(request):
 
 def publish(request):
     if request.method == 'POST':
+        newPost = Post()
+        currentAuthor = int(request.POST.get('author'))+1
+        authorInstance = Author.objects.get(id=currentAuthor)
+        newPost.author = authorInstance
+        newPost.pub_date = request.POST.get('datePublish')
+        newPost.description = request.POST.get('description')
+        newPost.title = request.POST.get('title')
+        newPost.save()
 
-
-        return HttpResponseRedirect(reverse('blog:index'))
+    return HttpResponseRedirect(reverse('blog:index'))
 
 
 # edit view renders the edit.html where the selected blog post can be edited

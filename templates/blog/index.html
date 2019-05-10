@@ -2,29 +2,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        .text{
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
     <meta charset="UTF-8">
     <title>Nomaan Abbasey's Blog</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<body style="background-image: url({% static 'gundam.jpg' %})">
-<div class="jumbotron" style="background-color: #2742E8">
-    <h1 style="text-align: center; color: #2BEFFF">Nomaan Abbasey's Adventures</h1>
-    <a href="{% url 'blog:post' %}" class="btn btn-primary mr-3">Publish a Post</a>
+<body class="bg-light">
+<div class="jumbotron text-white bg-primary p-md-5">
+    <h1 >Nomaan Abbasey's Adventures</h1>
+    <a href="{% url 'blog:post' %}" class="btn btn-success mr-5">Publish a Post</a>
 </div>
-<div class="nav" style="text-align: center; align-items: center;">
+<div class="row mb-1 offset-2">
 {% if latest_post_list %}
-    <ul style="list-style: none; width: 70%; margin: auto">
+    <div class="col-md-10 text-center">
     {% for val in latest_post_list %}
-        <li class="d-flex flex-column" style ="border: 2px solid black; border-radius: 25px; margin-top: 20px; background-color: #2BEFFF ">
-            <a class="p-2" style="text-align: left; color: #2D13EB; " href="{% url 'blog:detail' val.id %}">{{ val.title }}</a>
-            <span class="p-2" style="padding-left: 50ch;text-align: left; color: #2742E8">{{ val.author }}</span>
-        <p class="p-2" style="text-align: left; width: 100ch; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #2742E8">
+        <div class="row no-gutters border border-dark rounded overflow-hidden flex-md-row mb-4">
+        <div class="col p-4 d-flex flex-column " >
+            <a class="mb-0 text-dark font-weight-bold"  href="{% url 'blog:detail' val.id %}">{{ val.title }}</a>
+            <p class="mb-1 text-muted"}>{{ val.pub_date }}</p>
+            <span class="mb-auto">{{ val.author }}</span>
+        <p class="mb-3 text-nowrap ">
+            <div class="text">
             {{  val.description }}
+            </div>
         </p>
-        <p class="p-2" style="text-align: left; color: #2742E8"}>{{ val.pub_date }}</p>
-        </li>
+        </div>
+        </div>
     {% endfor %}
-    </ul>
+    </div>
     </div>
 {% else %}
     <div class="nav">

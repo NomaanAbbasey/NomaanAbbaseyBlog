@@ -7,22 +7,22 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
-<body style="background-image: url({% static 'gundam.jpg' %})">
-<div class="jumbotron" style="background-color: #2742E8">
-    <h1 style="text-align: center; color: #2BEFFF">Nomaan Abbasey's Adventures</h1>
+<body>
+<div class="jumbotron text-white bg-primary p-md-5">
+    <h1>Nomaan Abbasey's Adventures</h1>
 </div>
-<div class="nav" style="text-align: center; align-items: center;">
-    <ul style="list-style: none; width: 85%; margin: auto">
-         <li class="d-flex flex-column" style ="border: 2px solid black; border-radius: 25px; margin-top: 20px; background-color: #2BEFFF ">
-    <h3 class="p-2" style="color: #2D13EB">Edit Post: </h3>
+ <div class="container card mb-4 shadow-sm card-body border-dark">
+    <h3 class="p-2">Edit Post: </h3>
              <form class="p-2" action="{% url 'blog:completeEdit' post.id%}" method="post">
     {% csrf_token %}
-<textarea  name="description" rows="16" cols="100">{{ post.description }}</textarea>
+<div class="form-group">
+<textarea class="form-control"  name="description" rows="3">{{ post.description }}</textarea>
+</div>
+     <div class="d-flex flex-row">
         <input class="btn btn-success mr-3" type="submit" value="Edit">
+        <a href="{% url 'blog:detail' post.id%}" class="btn btn default btn-outline-primary ">Return to Blog</a>
+     </div>
     </form>
-             <a href="{% url 'blog:detail' post.id%}" class="btn btn default btn-outline-primary mr-3">Return to Blog</a>
-         </li>
-    </ul>
 </div>
 </body>
 </html>

@@ -27,7 +27,9 @@
     {% for val in latest_post_list %}
         <div class="row no-gutters border border-dark rounded overflow-hidden flex-md-row mb-4">
         <div class="col p-4 d-flex flex-column " >
+            <h2>
             <a class="mb-0 text-dark font-weight-bold"  href="{% url 'blog:detail' val.id %}">{{ val.title }}</a>
+            </h2>
             <p class="mb-1 text-muted"}>{{ val.pub_date }}</p>
             <span class="mb-auto font-italic">{{ val.author }}</span>
         <p class="mb-3 text-nowrap ">

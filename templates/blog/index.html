@@ -14,8 +14,12 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <body class="bg-light">
 <div class="jumbotron text-white bg-primary p-md-5">
-    <h1 >Nomaan Abbasey's Adventures</h1>
-    <a href="{% url 'blog:post' %}" class="btn btn-success mr-5">Publish a Post</a>
+    <div class="container flex-nowrap justify-content-center">
+    <h1 class="text-center">Nomaan Abbasey's Adventures</h1>
+    <div class="text-center">
+    <a href="{% url 'blog:post' %}" class="btn btn-success align-right">Publish a Post</a>
+    </div>
+    </div>
 </div>
 <div class="row mb-1 offset-2">
 {% if latest_post_list %}
